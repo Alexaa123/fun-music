@@ -1,0 +1,147 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    a {
+        text-decoration: none;
+    }
+    *::after{
+        box-sizing: border-box;
+    }
+    *::before{
+        box-sizing: border-box;
+    }
+    @keyframes circle {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(100deg)
+        }
+    }
+
+
+    .page {
+        background: transparent url(http://p3.music.126.net/dhFV0MCNSdmA3iSiubKi-g==/109951163377953627.jpg) no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .disc-container {
+        position: relative;
+       
+    }
+     .pointer {
+        position: absolute;
+        left: 50%;
+        width: 24vw;
+        z-index: 1;
+
+    }
+    .disc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 50px;
+    }
+    .disc .icon-play{
+        position: absolute;
+        z-index: 1;
+        fill: white;
+        width: 15vw;
+        height: 15vw;
+        background: rgba(0,0,0,0.5);
+        border-radius : 50%;
+
+    }
+    .disc .icon-pause {
+        position: absolute;
+        z-index: 1;
+        fill: white;
+        width: 15vw;
+        height: 15vw;
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+    }
+    .disc-container .icon-play{ display:block}
+    .disc-container .icon-pause{ display:none}
+
+    .disc-container.playing .icon-play{ display:none}
+    .disc-container.playing .icon-pause{ display:block}
+
+    .ring {
+        width: 72vw;
+        height: 72vw;
+
+    }
+    .light {
+        position: absolute;
+        width: 72vw;
+        animation: circle 20s infinite linear;
+        animation-play-state: running;
+        
+    }
+    .cover {
+        position: absolute;
+        width: 45vw;
+        border-radius: 50%;
+        animation: circle 20s infinite linear;
+        animation-play-state: paused;
+      
+    }
+    .disc-container.playing .light,
+    .disc-container.playing .cover {
+        animation-play-state: running;
+    }
+
+    .lyric {
+        text-align: center;
+        color: #fefefe;
+        line-height: 2;
+        margin-top: 20px;
+        flex-grow: 1;
+    }
+    .lyric h1 {
+        font-size: 18px;
+    }
+    .lyric p {
+        font-size: 14px;
+        line-height: 24px;
+
+    }
+    .lyric .lyricCotent {
+        height: 72px;
+        border: 1px solid red;
+        overflow: hidden;
+    }
+    .lyric .lines {
+        transform: translateY(0)
+    }
+    .page > .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .page .link a {
+        width: 38.5vw;
+        margin: 1em;
+        text-align: center;
+        border: 1px solid #d43b32;
+        text-decoration: none;
+        border-radius: 4px;
+        padding: 1.5vw;
+        letter-spacing: 2px;
+    }
+    .page .link .download {
+        background-color: #d43b32;
+        color: white;
+    }
+    .page .link .open {
+        background: transparent;
+        color: #d43b32;
+    }
+
+
