@@ -118,7 +118,8 @@
         overflow: hidden;
     }
     .lyric .lines {
-        transform: translateY(0)
+        transform: translateY(0);
+        transition: transform 0.3s;
     }
     .page > .link {
         display: flex;
