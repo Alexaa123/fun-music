@@ -46,7 +46,7 @@ $(function(){
 
 
     $.get('./index.json').then(function(str){
-        let obj = JSON.parse(str)
+        let obj = str
        let song = obj.filter((s)=>{return s.id ===id})[0]
        let {url,name,lyric} = song
        parseText(lyric)
