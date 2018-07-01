@@ -68,6 +68,16 @@ a {
     /* right:-2vw; */
 
 }
+ .wholePage > li {
+     display: none;
+ }
+  
+
+ .wholePage > li.active {
+     display: block;
+ }
+
+
 .recomList ul {
     display: flex;
     flex-wrap :wrap;
