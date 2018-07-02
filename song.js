@@ -54,10 +54,10 @@ $(function(){
 
        let audio = document.createElement('audio')
        audio.src = url
-    //    audio.oncanplay = function(){
-    //        audio.play()
-    //        $('.disc-container').addClass('playing')
-    //    }
+       audio.oncanplay = function(){
+           audio.play()
+           $('.disc-container').addClass('playing')
+       }
        $('.icon-pause').on('click',function(){
            audio.pause()
            $('.disc-container').removeClass('playing')

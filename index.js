@@ -4,7 +4,14 @@ $(function(){
         console.log(items)
         items.forEach(e => {
            let $li = $('<li><a href="./song.html?id='+e.id +'"><h3>'+e.name+'</h3><p><svg class="icon-sq"><use xlink:href="#icon-sq"></use></svg>'+ e.author+'-'+e.album+ '</p><svg class="icon-play"><use xlink:href="#icon-play"></use></svg></a></li>')
-        $('#lastMusic').append($li)    
+           let $hotSong = $('<a href="./song.html?id='+e.id +'"><div class ="songNumber">0'+e.id+'</div><div class ="songMusic"><h3>'+e.name+'</h3>\
+               <p><svg class="icon-sq"><use xlink:href="#icon-sq"></use></svg>'+ e.author+'-'+e.album+ '</p>\
+               <svg class="icon-play"><use xlink:href="#icon-play"></use></svg></div></a>')
+
+
+            $('.hotMusic').append($hotSong)
+           $('#lastMusic').append($li)    
+        $('.loading').remove()
         });
     })
 
@@ -39,7 +46,12 @@ $(function(){
 
     })
     let timer = undefined
+    if($('#searchSong').val() !== ''){
+        $('.holder').remove()
+    }
     $('#searchSong').on('input',function(e){
+        $('.holder').remove()
+        $('#output').empty()
         let $input = $(e.currentTarget)
         let val = $input.val().trim()
         if( val ===''){return}
@@ -49,7 +61,10 @@ $(function(){
         timer = setTimeout(function(){
             search(val).then((result)=>{
                 if(result.length !==0){
-                    $('#output').text(result.map((r)=>r.name).join(','))
+                    console.log(result)
+                    $('#output').append(result.map((r)=>{ 
+                        return  $output = $('<li><a href="./song.html?id='+r.id +'"><h3>'+r.name+'</h3></a></li>')
+                    }))
                 }
                 else{
                     $('#output').text('没有结果')
@@ -60,6 +75,7 @@ $(function(){
 
 
     })
+
 
     function search(keyword){
         return new Promise((resolve,reject)=>{

@@ -122,6 +122,9 @@ a {
         top:16px;
         background-color:#d33a31;
     }
+    .loading {
+        text-align: center;
+    }
 
     .lastMusic li {
         position: relative;
@@ -190,6 +193,148 @@ a {
         line-height: 16px;
         transform: scale(.75);
         padding-bottom: 5vw;
+    }
+
+    .hotSong {
+        height: 100%
+        
+    }
+    .topList {
+        height: 22vh;
+        background: url('https://s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee');
+        background-size: contain;
+        overflow: hidden;
+        position: relative;
+    }
+    .topList img {
+        position: absolute;
+        width: 160px;
+        height: 100px;
+        top:-24px;
+        left: -8px;
+        z-index: 1;
+    }
+    .topList span {
+        position: absolute;
+        font-size: 12px;
+        color: hsla(0,0%,100%,.8);
+        top: 90px;
+        left: 16px;
+        z-index: 1;
+    }
+    .topList::after{
+        content:'';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        background-color:rgba(0,0,0,.2);
+        z-index: 0;
+    }
+    .hotMusic > a {
+        display: flex;
+        align-items: center;
+    }
+    .hotMusic .songNumber {
+        height:10vw;
+        width: 10vw;
+        text-align: center;
+        font-size: 17px;
+        color: #df3436;
+        margin-top: 2vh;
+        margin-left: 0.2vh;
+    }
+
+
+    
+    .songMusic {
+        position: relative;
+        padding: 2vw 0;
+        border-bottom: 1px solid #E2E2E3;
+        flex:1;
+    }
+    .songMusic h3 {
+        padding-left: 10px;
+        color: black;
+        font-size: 17px;
+   
+        
+    }
+    .songMusic p {
+        font-size: 12px;
+        color: #888;
+        padding-left: 10px;
+        display: flex;
+
+    }
+    .songMusic .icon-play {
+        width: 22px;
+        height: 22px;
+        position:absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        fill: #AAAAAA;
+    }
+    .songMusic p .icon-sq {
+        width: 3.2vw;
+        height: 3.2vw;
+        margin-top: 1vw;
+        margin-right: 1vw;
+    }
+    .hotSong .footer {
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+        color: #999;
+
+    }
+    .search {
+        display: block;
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 2.5vh;
+        height: 5vh;
+        width: 50vh;
+        border-radius: 2.5vh;
+        background-color: #ebecec;
+    
+    }
+
+    #searchSong {
+        height: 5vh;
+        width: 40vh;
+        background-color: #ebecec;   
+        border:0 none;
+        outline: none;
+    }
+    .search .holder {
+        color:#c9c9c9;
+        font-size: 14px;
+        position: absolute;
+        top: 7px;
+        left: 35px;
+        pointer-events: none;
+    }
+    .icon-search {
+        width: 3vh;
+        height: 3vh;
+        fill: #c9c9c9;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+    }
+    .search #output {
+        text-align: left;
+    }
+    #output a h3 {
+        font-size: 17px;
+        color: black;
+    }
+    #output {
+        font-size: 17px;
     }
 
 

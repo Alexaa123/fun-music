@@ -17,7 +17,7 @@
             transform: rotate(0deg)
         }
         100% {
-            transform: rotate(100deg)
+            transform: rotate(360deg)
         }
     }
 
@@ -114,7 +114,6 @@
     }
     .lyric .lyricCotent {
         height: 72px;
-        border: 1px solid red;
         overflow: hidden;
     }
     .lyric .lines {

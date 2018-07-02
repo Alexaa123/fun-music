@@ -54,6 +54,7 @@
                 </section>
                 <section class= 'lastMusic'>
                     <h2>最新音乐</h2>
+                    <div class="loading"><img src="http://ozb1j982i.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.gif" alt=""></div>
                     <ul id = 'lastMusic'>  
                     </ul>
                    
@@ -66,11 +67,36 @@
                 </section>
             </li>
             <li class = 'hotSong'>
-                2
+                    <div class = 'topList'>
+                        <img src="https://s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880" alt="">
+                        <span>更新日期：6月28号</span>
+                    </div>
+                     
+                    <div class = 'hotMusic'>  
+                        <!-- <a href="./song.html?id='+e.id +'">
+                            <div class = 'songNumber'> 01 </div>
+                            <div class = 'songMusic'>
+                                <h3>可能否</h3>
+                                <p><svg class="icon-sq"><use xlink:href="#icon-sq"></use></svg>'+ e.author+'-'+e.album+ '</p>
+                                <svg class="icon-play"><use xlink:href="#icon-play"></use></svg>
+                            </div>                       
+                        </a> -->
+                    </div>
+                    <div class = 'footer'>
+                        查看完整榜单
+                    </div>
+                            
+                    
+
+             
 
             </li>
             <li class = 'search'>
-                <input id = 'searchSong' type="text" style = "border: 1px solid red">
+                <input id = 'searchSong' type="text">
+                <label class = 'holder'>搜索歌曲、歌手和专辑</label>
+                <svg class="icon-search" aria-hidden="true">
+                        <use xlink:href="#icon-search"></use>
+                    </svg>
                 <div id = 'output'></div>
             </li>
         </ul>
@@ -79,7 +105,7 @@
 
     </div>
     
-    <script src="https://at.alicdn.com/t/font_724657_jul1bwnous.js"></script>
+    <script src="//at.alicdn.com/t/font_724657_x56zpm5gq8.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
     <script src="index.js"></script>
     <script>
