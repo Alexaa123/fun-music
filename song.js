@@ -33,7 +33,6 @@ $(function(){
             }
             
         })
-        console.log(array)
         let $lyric = $('.lyricCotent')
         array.map(function(object){
             if(!object){return}
@@ -65,7 +64,6 @@ $(function(){
             left = left.length >1? left:'0'+left
             let time = `${minute}:${left}`;
             let $whichLine
-             console.log(time)
              $line = $('.lines > p')
              for(let i=0; i< $line.length; i++){
                  if(time > $line.eq(i).attr('data-time') && time < $line.eq(i+1).attr('data-time') && $line.eq(i+1).lenght !==0){
@@ -76,7 +74,6 @@ $(function(){
              if($whichLine){
                  Top = $whichLine.offset().top
                  linesTop = $('.lines').offset().top
-                 console.log(Top,linesTop)
                  deta = Top - linesTop - $('.lyricCotent').height()/3
                  $('.lines').css('transform','translateY(-'+deta+'px)')
 

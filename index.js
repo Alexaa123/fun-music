@@ -31,7 +31,6 @@ $(function(){
                 return
             }
             $.get('page2.json').then(function(obj){
-                console.log(obj)
                 $('.wholePage > li').eq(index).attr('data-downLoad','yes')
             })
         }
@@ -63,7 +62,6 @@ $(function(){
         timer = setTimeout(function(){
             search(val).then((result)=>{
                 if(result.length !==0){
-                    console.log(result)
                     $('#output').append(result.map((r)=>{ 
                         return  $output = $('<li><a href="./song.html?id='+r.id +'"><h3>'+r.name+'</h3></a></li>')
                     }))
