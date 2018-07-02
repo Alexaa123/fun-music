@@ -57,6 +57,32 @@ $(function(){
        audio.oncanplay = function(){
            audio.play()
            $('.disc-container').addClass('playing')
+           setInterval(function(){
+            let second = audio.currentTime
+            let minute = ~~(second/60)+''
+            minute = minute.length >1? minute:'0'+minute
+            let left = ~~(second - minute)+''
+            left = left.length >1? left:'0'+left
+            let time = `${minute}:${left}`;
+            let $whichLine
+             console.log(time)
+             $line = $('.lines > p')
+             for(let i=0; i< $line.length; i++){
+                 if(time > $line.eq(i).attr('data-time') && time < $line.eq(i+1).attr('data-time') && $line.eq(i+1).lenght !==0){
+                     $whichLine = $line.eq(i)
+                     break
+                 }
+             }
+             if($whichLine){
+                 Top = $whichLine.offset().top
+                 linesTop = $('.lines').offset().top
+                 console.log(Top,linesTop)
+                 deta = Top - linesTop - $('.lyricCotent').height()/3
+                 $('.lines').css('transform','translateY(-'+deta+'px)')
+
+
+             }
+        },500)
        }
        $('.icon-pause').on('click',function(){
            audio.pause()
@@ -66,32 +92,7 @@ $(function(){
            audio.play()
            $('.disc-container').addClass('playing')
            
-           setInterval(function(){
-               let second = audio.currentTime
-               let minute = ~~(second/60)+''
-               minute = minute.length >1? minute:'0'+minute
-               let left = ~~(second - minute)+''
-               left = left.length >1? left:'0'+left
-               let time = `${minute}:${left}`;
-               let $whichLine
-                console.log(time)
-                $line = $('.lines > p')
-                for(let i=0; i< $line.length; i++){
-                    if(time > $line.eq(i).attr('data-time') && time < $line.eq(i+1).attr('data-time') && $line.eq(i+1).lenght !==0){
-                        $whichLine = $line.eq(i)
-                        break
-                    }
-                }
-                if($whichLine){
-                    Top = $whichLine.offset().top
-                    linesTop = $('.lines').offset().top
-                    console.log(Top,linesTop)
-                    deta = Top - linesTop - $('.lyricCotent').height()/3
-                    $('.lines').css('transform','translateY(-'+deta+'px)')
-
-
-                }
-           },500)
+          
        })
     })
 

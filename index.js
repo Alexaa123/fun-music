@@ -3,10 +3,12 @@ $(function(){
         let items = obj
         console.log(items)
         items.forEach(e => {
+           let listNumber = e.id.length >1 ? e.id+'' : '0'+e.id
            let $li = $('<li><a href="./song.html?id='+e.id +'"><h3>'+e.name+'</h3><p><svg class="icon-sq"><use xlink:href="#icon-sq"></use></svg>'+ e.author+'-'+e.album+ '</p><svg class="icon-play"><use xlink:href="#icon-play"></use></svg></a></li>')
-           let $hotSong = $('<a href="./song.html?id='+e.id +'"><div class ="songNumber">0'+e.id+'</div><div class ="songMusic"><h3>'+e.name+'</h3>\
+           let $hotSong = $('<a href="./song.html?id='+e.id +'"><div class ="songNumber">'+listNumber+'</div><div class ="songMusic"><h3>'+e.name+'</h3>\
                <p><svg class="icon-sq"><use xlink:href="#icon-sq"></use></svg>'+ e.author+'-'+e.album+ '</p>\
                <svg class="icon-play"><use xlink:href="#icon-play"></use></svg></div></a>')
+      
 
 
             $('.hotMusic').append($hotSong)
